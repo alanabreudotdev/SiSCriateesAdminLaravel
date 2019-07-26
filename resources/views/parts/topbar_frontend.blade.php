@@ -175,9 +175,12 @@
         </div>
         @if(Auth::user())
         <ul class="navbar-nav hk-navbar-content">
-            <li class="nav-item">
-                <a id="settings_toggle_btn" class="nav-link nav-link-hover" href="javascript:void(0);"><span class="feather-icon"><i data-feather="settings"></i></span></a>
-            </li>
+            @if (Auth::check() && Auth::user()->hasRole('admin')) 
+                <li class="nav-item">
+                   <a id="settings_toggle_btn" class="nav-link nav-link-hover" href="{{ url('/admin') }}"><span class="feather-icon"><i data-feather="settings"></i></span></a>
+                </li>
+            @endif
+           
             <li class="nav-item dropdown dropdown-notifications">
                 <a class="nav-link dropdown-toggle no-caret" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="feather-icon"><i data-feather="bell"></i></span><span class="badge-wrap"><span class="badge badge-success badge-indicator badge-indicator-sm badge-pill pulse"></span></span></a>
                 <div class="dropdown-menu dropdown-menu-right" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
@@ -277,7 +280,7 @@
                     <div class="media">
                         <div class="media-img-wrap">
                             <div class="avatar">
-                                <img src="dist/img/avatar5.jpg" alt="user" class="avatar-img rounded-circle">
+                                <img src="{{asset('dist/img/avatar5.jpg')}}" alt="{{ Auth::user()->name }}" class="avatar-img rounded-circle">
                             </div>
                             <span class="badge badge-success badge-indicator"></span>
                         </div>
@@ -301,7 +304,13 @@
                         </div>
                     </div>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#"><i class="dropdown-icon zmdi zmdi-power"></i><span>Log out</span></a>
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();">
+                     <i class="dropdown-icon zmdi zmdi-power"></i><span>Sair</span></a>
+                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
                 </div>
             </li>
             

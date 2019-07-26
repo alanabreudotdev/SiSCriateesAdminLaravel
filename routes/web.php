@@ -29,7 +29,9 @@ Route::post('logout', 'Auth\LoginController@logout')->name('sair');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::prefix('admin')->middleware('auth')->group(function(){
+
+//Route::prefix('admin')->middleware('auth')->group(function(){
+    Route::group([ 'prefix' => 'admin', 'middleware' => ['auth', 'roles'], 'roles' => 'admin'], function () {
     Route::get('/','Admin\AdminController@index')->name('admin');
     Route::get('usuarios','Admin\AdminController@index')->name('admin.usuarios');
     Route::get('noticias','Admin\AdminController@index')->name('admin.noticias');

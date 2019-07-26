@@ -55,7 +55,7 @@ License: You must have a valid license purchased only from templatemonster to le
                 <footer class="footer">
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
-                            <p>Pampered by<a href="https://hencework.com/" class="text-dark" target="_blank">Hencework</a> © 2019</p>
+                            <p>{{setting('footer-text')}}</p>
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <p class="d-inline-block">Follow us</p>
