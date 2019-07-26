@@ -15,18 +15,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+
 
 // Authentication Routes...
 Route::get('entrar', 'Auth\LoginController@showLoginForm')->name('entrar');
 Route::post('entrar', 'Auth\LoginController@login');
-Route::post('sair', 'Auth\LoginController@logout')->name('sair');
+Route::post('logout', 'Auth\LoginController@logout')->name('sair');
 
-// Registration Routes...
-if ($options['register'] ?? true) {
+
     Route::get('cadastrar', 'Auth\RegisterController@showRegistrationForm')->name('cadastrar');
     Route::post('cadastrar', 'Auth\RegisterController@register');
-}
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 
