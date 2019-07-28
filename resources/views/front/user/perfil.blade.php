@@ -11,12 +11,12 @@
                     <div class="bg-overlay bg-trans-dark-60"></div>
                     <div class="container-fluid profile-cover-content py-50">
                         <div class="hk-row"> 
-                            <div class="col-lg-6">
+                            <div class="col-lg-12">
                                 <div class="media align-items-center">
                                     <div class="media-img-wrap  d-flex">
                                         <div class="avatar">
-                                            <img src="{{ asset('img/avatar5.jpg')}}" alt="user" class="avatar-img rounded-circle">
-                                        </div>
+                                                <img src="@if(Auth::user()->photo_url) {{ asset('storage'.Auth::user()->photo_url) }} @else {{ asset('dist/img/img-thumb.jpg')}} @endif" alt="{{ Auth::user()->name }}" class="avatar-img rounded-circle">
+                                            </div>
                                     </div>
                                     <div class="media-body">
                                     <div class="text-white text-capitalize display-6 mb-5 font-weight-400">{{ Auth::user()->name }}</div>
@@ -24,13 +24,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="button-list">
-                                    <a href="#" class="btn btn-icon btn-icon-circle btn-indigo btn-icon-style-2"><span class="btn-icon-wrap"><i class="fa fa-facebook"></i></span></a>
-                                    <a href="#" class="btn btn-icon btn-icon-circle btn-sky btn-icon-style-2"><span class="btn-icon-wrap"><i class="fa fa-twitter"></i></span></a>
-                                    <a href="#" class="btn btn-icon btn-icon-circle btn-purple btn-icon-style-2"><span class="btn-icon-wrap"><i class="fa fa-instagram"></i></span></a>
-                                </div>
-                            </div>
+                           
                         </div>
                     </div>
                 </div>
@@ -81,7 +75,7 @@
 
                                                 
                                                 <div class="text-center">
-                                                        <button class="btn btn-primary text" type="submit">Alterar Senha</button>
+                                                        <button class="btn btn-primary text" type="submit">Aterar</button>
                                                 </div>                                            
                                             </form>
                                         </div>

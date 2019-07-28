@@ -178,14 +178,14 @@
             <li class="nav-item dropdown dropdown-notifications">
                 <a class="nav-link dropdown-toggle no-caret" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="feather-icon"><i data-feather="bell"></i></span><span class="badge-wrap"><span class="badge badge-success badge-indicator badge-indicator-sm badge-pill pulse"></span></span></a>
                 <div class="dropdown-menu dropdown-menu-right" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-                    <h6 class="dropdown-header">Notifications <a href="javascript:void(0);" class="">View all</a></h6>
+                    <h6 class="dropdown-header">Notificações <a href="javascript:void(0);" class="">Ver todas</a></h6>
                     <div class="notifications-nicescroll-bar">
                         <a href="javascript:void(0);" class="dropdown-item">
                             <div class="media">
                                 <div class="media-img-wrap">
                                     <div class="avatar avatar-sm">
-                                        <img src="{{asset('dist/img/avatar1.jpg')}}" alt="user" class="avatar-img rounded-circle">
-                                    </div>
+                                            <img src="@if(Auth::user()->photo_url) {{ asset('storage'.Auth::user()->photo_url) }} @else {{ asset('dist/img/img-thumb.jpg')}} @endif" alt="{{ Auth::user()->name }}" class="avatar-img rounded-circle">
+                                        </div>
                                 </div>
                                 <div class="media-body">
                                     <div>

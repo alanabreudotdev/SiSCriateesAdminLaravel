@@ -11,7 +11,7 @@
                     <div class="bg-overlay bg-trans-dark-60"></div>
                     <div class="container-fluid profile-cover-content py-50">
                         <div class="hk-row"> 
-                            <div class="col-lg-6">
+                            <div class="col-lg-12">
                                 <div class="media align-items-center">
                                     <div class="media-img-wrap  d-flex">
                                         <div class="avatar">
@@ -24,13 +24,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="button-list">
-                                    <a href="#" class="btn btn-icon btn-icon-circle btn-indigo btn-icon-style-2"><span class="btn-icon-wrap"><i class="fa fa-facebook"></i></span></a>
-                                    <a href="#" class="btn btn-icon btn-icon-circle btn-sky btn-icon-style-2"><span class="btn-icon-wrap"><i class="fa fa-twitter"></i></span></a>
-                                    <a href="#" class="btn btn-icon btn-icon-circle btn-purple btn-icon-style-2"><span class="btn-icon-wrap"><i class="fa fa-instagram"></i></span></a>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
