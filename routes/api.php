@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use App\Page;
-use Auth;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes

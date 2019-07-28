@@ -2,7 +2,7 @@
  
 "use strict"; 
 $(document).ready(function() {
-	/*Toaster Alert*/
+	/*Toaster Alert
 	$.toast({
 		heading: 'Oh snap!',
 		text: '<p>Change a few things and try submitting again.</p>',
@@ -13,7 +13,7 @@ $(document).ready(function() {
 		stack: 6,
 		showHideTransition: 'fade'
 	});
-	
+	*/
 	if( $('#pie_chart_1').length > 0 ){
 		$('#pie_chart_1').easyPieChart({
 			barColor : '#3a55b1',

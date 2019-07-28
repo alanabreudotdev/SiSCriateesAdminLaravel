@@ -1,21 +1,15 @@
 <nav class="navbar navbar-expand-xl navbar-light fixed-top hk-navbar hk-navbar-alt">
         <a class="navbar-toggle-btn nav-link-hover navbar-toggler" href="javascript:void(0);" data-toggle="collapse" data-target="#navbarCollapseAlt" aria-controls="navbarCollapseAlt" aria-expanded="false" aria-label="Toggle navigation"><span class="feather-icon"><i data-feather="menu"></i></span></a>
-        <a class="navbar-brand" href="dashboard1.html">
-            <img class="brand-img d-inline-block align-top" src="dist/img/logo-light.png" alt="brand" />
+        <a class="navbar-brand" href="/">
+            <img class="brand-img d-inline-block align-top" src="{{asset('dist/img/logo-light.png')}}" alt="brand" />
         </a>
         <div class="collapse navbar-collapse" id="navbarCollapseAlt">
             <ul class="navbar-nav">
-                <li class="nav-item dropdown show-on-hover active">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dashboard
+                <li class="nav-item  show-on-hover active">
+                    <a class="nav-link " href="/" role="button" aria-haspopup="true" aria-expanded="false">
+                            Início
                         </a>
-                    <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-                        <a class="dropdown-item active" href="dashboard1.html">CRM</a>
-                        <a class="dropdown-item" href="dashboard2.html">Project</a>
-                        <a class="dropdown-item" href="dashboard3.html">Statistics</a>
-                        <a class="dropdown-item" href="dashboard4.html">classic</a>
-                        <a class="dropdown-item" href="dashboard5.html">Analytics</a>
-                    </div>
+              
                 </li>
                 <li class="nav-item dropdown show-on-hover">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -190,7 +184,7 @@
                             <div class="media">
                                 <div class="media-img-wrap">
                                     <div class="avatar avatar-sm">
-                                        <img src="dist/img/avatar1.jpg" alt="user" class="avatar-img rounded-circle">
+                                        <img src="{{asset('dist/img/avatar1.jpg')}}" alt="user" class="avatar-img rounded-circle">
                                     </div>
                                 </div>
                                 <div class="media-body">
@@ -206,7 +200,7 @@
                             <div class="media">
                                 <div class="media-img-wrap">
                                     <div class="avatar avatar-sm">
-                                        <img src="dist/img/avatar2.jpg" alt="user" class="avatar-img rounded-circle">
+                                        <img src="{{asset('dist/img/avatar2.jpg')}}" alt="user" class="avatar-img rounded-circle">
                                     </div>
                                 </div>
                                 <div class="media-body">
@@ -280,29 +274,18 @@
                     <div class="media">
                         <div class="media-img-wrap">
                             <div class="avatar">
-                                <img src="{{asset('dist/img/avatar5.jpg')}}" alt="{{ Auth::user()->name }}" class="avatar-img rounded-circle">
+                                <img src="@if(Auth::user()->photo_url) {{ asset('storage'.Auth::user()->photo_url) }} @else {{ asset('dist/img/img-thumb.jpg')}} @endif" alt="{{ Auth::user()->name }}" class="avatar-img rounded-circle">
                             </div>
                             <span class="badge badge-success badge-indicator"></span>
-                        </div>
-                        <div class="media-body">
-                        <span>{{ Auth::user()->name}}<i class="zmdi zmdi-chevron-down"></i></span>
                         </div>
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
-                    <a class="dropdown-item" href="profile.html"><i class="dropdown-icon zmdi zmdi-account"></i><span>Profile</span></a>
+
+                <a class="dropdown-item" href="{{ route('usuario.perfil')}}"><i class="dropdown-icon zmdi zmdi-account-o"></i><span>Meu Perfil</span></a>
                     <a class="dropdown-item" href="#"><i class="dropdown-icon zmdi zmdi-card"></i><span>My balance</span></a>
                     <a class="dropdown-item" href="inbox.html"><i class="dropdown-icon zmdi zmdi-email"></i><span>Inbox</span></a>
                     <a class="dropdown-item" href="#"><i class="dropdown-icon zmdi zmdi-settings"></i><span>Settings</span></a>
-                    <div class="dropdown-divider"></div>
-                    <div class="sub-dropdown-menu show-on-hover">
-                        <a href="#" class="dropdown-toggle dropdown-item no-caret"><i class="zmdi zmdi-check text-success"></i>Online</a>
-                        <div class="dropdown-menu open-left-side">
-                            <a class="dropdown-item" href="#"><i class="dropdown-icon zmdi zmdi-check text-success"></i><span>Online</span></a>
-                            <a class="dropdown-item" href="#"><i class="dropdown-icon zmdi zmdi-circle-o text-warning"></i><span>Busy</span></a>
-                            <a class="dropdown-item" href="#"><i class="dropdown-icon zmdi zmdi-minus-circle-outline text-danger"></i><span>Offline</span></a>
-                        </div>
-                    </div>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
