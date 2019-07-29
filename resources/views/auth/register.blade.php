@@ -70,7 +70,7 @@
                             </div>
                             <button class="btn btn-primary btn-block" type="submit">Cadastrar</button>
                             
-                            <p class="text-center">Já tem uma conta? <a href="#">Entrar</a></p>
+                            <p class="text-center mt-15">Já tem uma conta? <a href="{{ route('entrar') }}">Entrar</a></p>
                         </form>
                        
                     </div>

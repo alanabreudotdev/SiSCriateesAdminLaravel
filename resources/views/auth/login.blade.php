@@ -23,15 +23,16 @@
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input class="form-control" id="password" placeholder="Password" type="password" @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                    <input class="form-control" id="password" placeholder="Senha" type="password" @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                    
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><span class="feather-icon"><i data-feather="eye-off"></i></span></span>
+                                    </div>
                                     @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
-                                    <div class="input-group-append">
-                                        <span class="input-group-text"><span class="feather-icon"><i data-feather="eye-off"></i></span></span>
-                                    </div>
+                                 @enderror
                                 </div>
                             </div>
                             <div class="custom-control custom-checkbox mb-25">
@@ -41,7 +42,7 @@
                             <button class="btn btn-primary btn-block" type="submit">Entrar</button>
                             <p class="font-14 text-center mt-15"><a href="{{ route('password.request') }}">Esqueceu sua senha?</a></p>
                            
-                            <p class="text-center">Você tem uma conta? <a href="#">Entrar</a></p>
+                        <p class="text-center">Não tem uma conta? <a href="{{ route('cadastrar') }}">Cadastrar</a></p>
                         </form>
                     </div>
                 </div>
